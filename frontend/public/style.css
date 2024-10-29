@@ -47,7 +47,7 @@ button:active {
 }
 
 #display {
-  background-color: #444;
+  background-color: #4b113c;
   height: 30vh;
   width: 100%;
   outline: none;
@@ -66,18 +66,18 @@ button:active {
 
 #keypad {
   height: 70vh;
-  background-color: #333;
+  background-color: #c9b2b2;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
 
 #equal,
 #clear {
-  color: rgb(1, 133, 116);
+  color: rgb(167, 15, 91);
 }
 
 .Special {
-  background-color: #018574;
+  background-color: #f35999;
 }
 
 .Special:active {

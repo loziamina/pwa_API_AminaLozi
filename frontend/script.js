@@ -222,7 +222,7 @@ if (navigator.serviceWorker) {
         navigator.serviceWorker
             // The register function takes as argument
             // the file path to the worker's file
-            .register('./sw.js')
+            .register('./service-worker.js')
             // Gives us registration object
             .then(reg => console.log('Service Worker Registered'))
             .catch(swErr => console.log(
