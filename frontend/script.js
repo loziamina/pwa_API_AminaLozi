@@ -229,3 +229,29 @@ if (navigator.serviceWorker) {
                   `Service Worker Installation Error: ${swErr}}`));
       });
 }
+
+async function calculateBackend(operation, num1, num2) {
+  try {
+    const response = await fetch('http://localhost:3000/api/calculate', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ operation, num1, num2 })
+    });
+    const data = await response.json();
+    document.getElementById('display').value = data.result;
+  } catch (error) {
+    console.error('Erreur lors du calcul:', error);
+    document.getElementById('display').value = "Erreur";
+  }
+}
+
+// Exemple d'utilisation de calculateBackend dans l'interface de la calculatrice
+document.getElementById('equal').addEventListener('click', () => {
+  const expression = Display.value;
+  const num1 = parseFloat(expression.split(' ')[0]);
+  const operator = expression.split(' ')[1];
+  const num2 = parseFloat(expression.split(' ')[2]);
+  calculateBackend(operator, num1, num2);
+});

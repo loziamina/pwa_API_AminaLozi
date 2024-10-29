@@ -1,12 +1,13 @@
+// server.js
 const express = require('express');
 const app = express();
 const port = 3000;
 const calculateRoute = require('./routes/calculate');
 
-// Middleware pour gérer les données JSON
+// Middleware pour traiter les requêtes JSON
 app.use(express.json());
 
-// Utiliser la route de calcul
+// Route pour les calculs
 app.use('/api', calculateRoute);
 
 // Démarrer le serveur
